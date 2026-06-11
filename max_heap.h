@@ -34,10 +34,10 @@ void MaxHeap<T>::push(const T& item) {
 template <typename T>
 void MaxHeap<T>::pop() {
     if (data.empty()) {
-        throw std::out_of_range("heap is empty");
+        return;
     }
 
-    data[0] = data[data.size() - 1];
+    std::swap(data[0], data[data.size() - 1]);
     data.pop_back();
 
     std::size_t index = 0;
