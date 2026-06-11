@@ -37,7 +37,28 @@ void MaxHeap<T>::pop() {
         throw std::out_of_range("heap is empty");
     }
 
-    // TO BE COMPLETETED
+    // last item to the root, removing the old
+    std::swap(data[0], data[data.size() - 1])'
+        std::size_t index = 0;
+
+        while (true){
+        std::size_t left = 2 * index + 1;
+        std::size_t right = 2 * index + 2;
+        std::size_t largest = index;
+
+        if (left < data.size() && data[left] > data[largest]){
+            largest = left;
+        }
+        if (right < data.size() && data[right] > data[largest]){
+            largest = right;
+        }
+
+        if (largest == index) {
+            break;
+        }
+        std::swap(data[index], data[largest]);
+        index = largest;
+    }
     
 }
 
